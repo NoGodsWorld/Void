@@ -1,0 +1,11 @@
+<h1>shows specific records </h1>
+
+    <% @var.each do |pointer| %>
+        <%= link_to vehicle_path(pointer.id) do %>
+        <p>Model:<%=pointer.vehicle %></p>
+        <img src="<%=pointer.vehicle%>">
+        <p>Created at<%=@var.created_at%></p>
+        <p>Updated at<%=@var.updated_at%></p>
+        
+        <% end %>
+    <% end %>

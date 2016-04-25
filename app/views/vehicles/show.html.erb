@@ -1,0 +1,23 @@
+<h1>Show specific record </h1>
+
+    <img src="<%=@var.vehicle%>">
+    <p>Model<%=@var.model%></p>
+    <p>Year<%=@var.year%></p>
+    <p>Capacity<%=@var.capacity%></p>
+    <p>price<%=@var.price%></p>
+    <p>photo<%=@var.photo%></p>
+    
+    <p>Created at<%=@var.created_at%></p>
+    <p>Updated at<%=@var.updated_at%></p>
+        <%=link_to "Edit", edit_vehicle_path(@var.id)%>
+        <%=link_to "Delete", photo_path(@var.id),{:method => :delete, :data => {:confirm => "Are you sure?"}}%>
+        
+        <p>Comments:</p>
+        
+            <ul>
+                <% @com.each do |pointer|%>
+                <li><%=pointer.body%></li>
+                <% end %>
+            </ul>
+            
+    

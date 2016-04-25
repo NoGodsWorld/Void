@@ -1,0 +1,33 @@
+<h1>Welcome to weaboostan </h1>
+
+    <% if @var.errors.present? %>
+    <p>The following error prevented your photo for being saved</p>
+
+            <ul>
+                <% if @var.errors.full_messages.each do |message| %>
+                <li><%=message%></li>
+                <% end %>
+            </ul>
+            
+    <%= form_tag(photos_path) do %>
+        <label for="model">Model
+        <input type="text" id="model" name="model" value=<%=@var.model%>> </label>
+        
+        <label for="year">Year
+        <input type="text" id="year" name="year" value=<%=@var.year%>> </label>
+        
+        <label for="capacity">Capacity
+        <input type="text" id="capacity" name="capacity" value=<%=@var.capacity%>> </label>
+
+        <label for="price">Price
+        <input type="text" id="price" name="price" value=<%=@var.price%>> </label>
+    
+
+        <label for="year">Photo
+        <input type="text" id="photo" name="photo"value=<%=@var.photo%>> </label>
+        
+        <input type="submit">
+        
+        <% end %>
+
+
